@@ -235,14 +235,3 @@ class _CryptoToken extends StatelessWidget {
     );
   }
 }
-
-// class NFCBar extends StatelessWidget {
-//   const NFCBar({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ChangeNotifierProvider(create: (context) => NFCNotifier());
-
-//     );
-//   }
-// }
