@@ -1,4 +1,7 @@
+import 'package:crypto_nfc_01/core.notifier/nrf_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:nfc_manager/nfc_manager.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -232,3 +235,14 @@ class _CryptoToken extends StatelessWidget {
     );
   }
 }
+
+// class NFCBar extends StatelessWidget {
+//   const NFCBar({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ChangeNotifierProvider(create: (context) => NFCNotifier());
+
+//     );
+//   }
+// }
