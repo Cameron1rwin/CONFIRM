@@ -1,5 +1,6 @@
 import 'package:crypto_nfc_01/home_page.dart';
 import 'package:crypto_nfc_01/nfc_page.dart';
+import 'package:crypto_nfc_01/services/web3_connect.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -7,9 +8,14 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -18,17 +24,12 @@ class MyApp extends StatelessWidget {
         title: 'NFC Crypto App',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(
-              seedColor: const Color(0xFF007ACC)),
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF007ACC)),
         ),
         home: const MyHomePage(),
       ),
     );
   }
-    // return const MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   home: HomePage(),
-    // );
 }
 
 class MyAppState extends ChangeNotifier {
@@ -97,10 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: page,
               ),
             ),
+            const Expanded(child: walletWidget()),
           ],
         ),
       );
     });
   }
 }
-
