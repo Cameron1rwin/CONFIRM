@@ -98,7 +98,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: page,
               ),
             ),
-            const Expanded(child: walletWidget()),
+                ],
+              ),
+            ),
           ],
         ),
       );
