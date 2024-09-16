@@ -3,6 +3,7 @@ import 'package:crypto_nfc_01/nfc_page.dart';
 import 'package:crypto_nfc_01/services/web3_connect.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:web3modal_flutter/web3modal_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,16 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 }
 
 class MyAppState extends ChangeNotifier {
-  //Add wallet address/tx info here
+  // var connectedWallet = String;
+
+  // void connectWallet() {
+  //   if (connectedWallet == (current)) {
+  //     favorites.remove(current);
+  //   } else {
+  //     favorites.add(current);
+  //   }
+  //   notifyListeners();
+  // }
 }
 
 class MyHomePage extends StatefulWidget {
@@ -93,11 +103,23 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Expanded(
-              child: Container(
-                color: Theme.of(context).colorScheme.primaryContainer,
-                child: page,
-              ),
-            ),
+              child: Column(
+                children: [
+                                    const Flexible(
+                    flex: 1,
+                    fit: FlexFit.tight,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [walletWidget()]),
+                  ),
+                  Flexible(
+                    flex: 12,
+                    fit: FlexFit.loose,
+                    child: Container(
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                      child: page,
+                    ),
+                  ),
                 ],
               ),
             ),

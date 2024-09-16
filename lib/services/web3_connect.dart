@@ -38,14 +38,14 @@ class _walletWidgetState extends State<walletWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        W3MConnectWalletButton(service: _w3mService),
+        W3MConnectWalletButton(service: _w3mService, size: BaseButtonSize.small,),
         const SizedBox(height:16),
-        W3MNetworkSelectButton(service: _w3mService),
+        W3MNetworkSelectButton(service: _w3mService, size: BaseButtonSize.small,),
         const SizedBox(height:16),
-        W3MAccountButton(service: _w3mService),
+        W3MAccountButton(service: _w3mService, size: BaseButtonSize.small,),
 
       ],
     );
